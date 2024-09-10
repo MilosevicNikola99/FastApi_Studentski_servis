@@ -31,9 +31,9 @@ class StudentService:
         raise HTTPException(status_code=404,detail="Student not found")
 
     def delete(self, id):
-        for student1 in self.repository.students:
-            if student1["id"] == id:
-                self.repository.students.remove(student1)
+        for student in self.repository.students:
+            if student["id"] == id:
+                self.repository.students.remove(student)
                 self.repository.update_students()
                 return self.repository.students
 
