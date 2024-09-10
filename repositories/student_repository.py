@@ -28,6 +28,7 @@ class StudentRepositoriy():
             if student['id'] == d_student['id']:
                 self.students.remove(student)
                 self.update_students()
+
     def student_exists(self,id):
         for student in self.students:
             if student['id'] == id:

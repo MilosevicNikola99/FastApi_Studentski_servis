@@ -16,19 +16,19 @@ class StudentService:
             if student["id"] == id:
                 return student
 
-        raise HTTPException(status_code=404)
+        raise HTTPException(status_code=404,detail="Student not found")
 
-    def update(self, id, student):
+    def update(self, id:int, student):
 
         for student1 in self.repository.students:
             if student1["id"] == id:
-                student1["name"] = student.name
-                student1["prezime"] = student.prezime
-                student1["indeks"] = student.indeks
+                student1["name"] = student["name"]
+                student1["prezime"] = student["prezime"]
+                student1["indeks"] = student["indeks"]
                 self.repository.update_students()
                 return self.repository.students
 
-            raise HTTPException(status_code=404,detail="Student not found")
+        raise HTTPException(status_code=404,detail="Student not found")
 
     def delete(self, id):
         for student1 in self.repository.students:

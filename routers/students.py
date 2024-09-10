@@ -15,8 +15,8 @@ class Student(BaseModel):
 student_service = StudentService("resources/students.json")
 @app.post("/students/")
 async def create_student(student: Student):
-    student_service.create(student.dict())
-    return student.dict()
+    student_service.create(student.model_dump())
+    return student.model_dump()
 
 @app.get("/students/{id}")
 async def get_student(id: int):
@@ -24,7 +24,7 @@ async def get_student(id: int):
 
 @app.put("/students/{id}")
 async def update_student(id: int, student: Student):
-    return student_service.update(id,student.dict())
+    return student_service.update(id,student.model_dump())
 
 @app.delete("/students/{id}")
 async def delete_student(id: int):
