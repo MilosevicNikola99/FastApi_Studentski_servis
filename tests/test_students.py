@@ -29,7 +29,7 @@ def test_get_student():
     assert response.status_code == 200
     assert response.json() == {"id": 1, "name": "Nikola", "prezime": "Milosevic", "indeks": "197/2018"}
 
-def test_get_existing_student():
+def test_get_non_existing_student():
     response = client.get("/students/10")
     assert response.status_code == 404
     assert response.json() == { "detail":"Student not found"}
