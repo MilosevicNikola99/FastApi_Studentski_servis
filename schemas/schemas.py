@@ -9,10 +9,10 @@ class Student(StudentIndeks):
     prezime: str | None = None
 
 
-class SubjectCode(BaseModel):
+class CourseCode(BaseModel):
     sifra_predmeta: str
 
-class Subject(SubjectCode):
+class Course(CourseCode):
     naziv: str | None = None
     espb: int | None = None
 
@@ -22,5 +22,5 @@ class ExamInfo(BaseModel):
     ocena : int | None = None
     polozen: bool | None = None
 
-class Exam(ExamInfo,StudentIndeks,SubjectCode):
+class Exam(ExamInfo,StudentIndeks,CourseCode):
     pass

@@ -48,12 +48,7 @@ class ExamService():
         raise HTTPException(status_code=404,detail="Exam not found")
 
     def delete(self,sifra_predmeta: str,indeks:str,datum:str):
-        print("indeks,sifra i datum: ",indeks,sifra_predmeta,datum)
         for exam in self.repository.exams:
-            print(exam)
-            print(exam["indeks"] == indeks,exam["indeks"],indeks)
-            print(exam["sifra_predmeta"] == sifra_predmeta,exam["sifra_predmeta"],sifra_predmeta)
-            print(exam["datum"] == datum,exam["datum"],datum)
             if (exam["indeks"] == indeks and
                 exam["sifra_predmeta"] == sifra_predmeta and
                 exam["datum"] == datum ):
