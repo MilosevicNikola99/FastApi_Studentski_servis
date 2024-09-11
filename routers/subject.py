@@ -1,12 +1,9 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from schemas.schemas import Subject
 from services.subject_service import SubjectService
 app = FastAPI()
 
-class Subject(BaseModel):
-    naziv: str
-    sifra_predmeta: str
-    espb: int
+
 
 subject_service = SubjectService("resources/subject.json")
 

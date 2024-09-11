@@ -1,16 +1,9 @@
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-
-from repositories.student_repository import StudentRepositoriy
+from fastapi import FastAPI
 from services.student_service import StudentService
+from schemas.schemas import Student
 app = FastAPI()
 
-class Student(BaseModel):
-    id: int
-    name: str
-    prezime: str
-    indeks: str
 
 student_service = StudentService("resources/students.json")
 @app.post("/students/")

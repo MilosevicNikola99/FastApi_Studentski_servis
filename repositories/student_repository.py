@@ -4,12 +4,11 @@ import json
 class StudentRepositoriy():
     def __init__(self,path):
         self.path = path
-        self.students = self.read_students(path)
+        self.students = self.read_students()
 
-    def read_students(self,path):
-        with open(path , "r") as f:
-            self.students = json.load(f)
-            return self.students
+    def read_students(self):
+        with open(self.path , "r") as f:
+            return json.load(f)
 
     def add_student(self,student):
         self.students.append(student)
