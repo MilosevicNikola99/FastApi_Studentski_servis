@@ -1,4 +1,4 @@
-from repositories.course_repository import CourseRepository
+from ..repositories.course_repository import CourseRepository
 from fastapi import HTTPException
 
 class CourseService():

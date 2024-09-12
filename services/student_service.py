@@ -1,5 +1,5 @@
 
-from repositories.student_repository import StudentRepositoriy
+from ..repositories.student_repository import StudentRepositoriy
 from fastapi import HTTPException
 
 class StudentService:

@@ -37,4 +37,6 @@ class ExamRepository():
                 return True
         return False
 
+    def get_exams(self):
+        return self.exams
 
