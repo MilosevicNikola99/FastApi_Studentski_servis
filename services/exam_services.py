@@ -16,7 +16,6 @@ class ExamService():
     def get_by_indeks(self, indeks: str):
         exams = []
         for exam in self.repository.exams:
-            print(exam["indeks"],indeks)
             if exam["indeks"] == indeks:
                 exams.append(exam)
 

@@ -24,3 +24,5 @@ async def update_course(course_code: str,course: Course):
 async def delete_course(course_code: str):
     return course_service.delete(course_code)
 
+def get_course_service():
+    return course_service

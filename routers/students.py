@@ -22,3 +22,7 @@ async def update_student(id: int, student: Student):
 @router.delete("/students/{id}",tags=["students"])
 async def delete_student(id: int):
     return student_service.delete(id)
+
+
+def get_student_service():
+    return student_service

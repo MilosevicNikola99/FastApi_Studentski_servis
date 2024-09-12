@@ -12,6 +12,7 @@ class CourseService():
 
     def get_by_code(self, sifra_predmeta: str):
         for course in self.repository.courses:
+            print(course["sifra_predmeta"], sifra_predmeta)
             if course["sifra_predmeta"] == sifra_predmeta:
                 return course
         raise HTTPException(status_code=404,detail="Course not found")

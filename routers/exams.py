@@ -21,9 +21,6 @@ async def get_exams(sifra_predmeta:str | None = None,indeks:str | None = None):
         return exam_service.get_by_indeks(indeks)
     return exam_service.get_all_exams()
 
-@router.get("/exams/statistics/{indeks}",tags=["exams"])
-async def get_statistics(indeks: str):
-    return exam_service.calculate_statistics(indeks)
 
 @router.post("/exams/{sifra_predmeta}/{indeks}",tags=["exams"])
 async def create_subject(sifra_predmeta:str,indeks:str ,exam_info : ExamInfo):
@@ -41,3 +38,5 @@ async def update_subject(sifra_predmeta:str,indeks:str,datum:str,exam_info : Exa
 async def delete_subject(sifra_predmeta:str,indeks:str,datum:str):
     return exam_service.delete(sifra_predmeta,indeks,datum)
 
+def get_exam_service():
+    return exam_service
