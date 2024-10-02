@@ -34,7 +34,7 @@ def test_get_non_existing_student():
     response = client.get("/students/10")
     assert response.status_code == 404
     assert response.json() == { "detail":"Student not found"}
-    assert 200 == 204
+    assert 200 == 205
 
 def test_update_student():
     response = client.put("/students/2", json =  {"id": 2, "name": "Marko", "prezime": "Petrovic", "indeks": "120/2019"})
