@@ -27,7 +27,6 @@ async def create_subject(sifra_predmeta:str,indeks:str ,exam_info : ExamInfo):
     exam_info = exam_info.model_dump()
     exam = Exam(datum= exam_info["datum"],ocena=exam_info["ocena"],polozen=exam_info["polozen"],indeks=indeks,sifra_predmeta=sifra_predmeta)
     exam_service.create(exam.model_dump())
-    print(exam.model_dump())
     return exam.model_dump()
 
 @router.put("/exams/{sifra_predmeta}/{indeks}/{datum}",tags=["exams"])
