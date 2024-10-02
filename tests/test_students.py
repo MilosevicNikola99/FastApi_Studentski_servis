@@ -28,7 +28,7 @@ def test_get_student():
     response = client.get("/students/1")
     assert response.status_code == 200
     assert response.json() == {"id": 1, "name": "Nikola", "prezime": "Milosevic", "indeks": "197/2018"}
-    assert 200 == 202
+    assert 200 == 203
 
 def test_get_non_existing_student():
     response = client.get("/students/10")
